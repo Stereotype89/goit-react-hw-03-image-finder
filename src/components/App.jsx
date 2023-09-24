@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import Loader from 'react-loader-spinner';
+import { RotatingLines } from 'react-loader-spinner';
 
 import { Button } from './Button/Button';
 import { ImageGallery } from './ImageGallery/ImageGallery';
@@ -97,12 +96,12 @@ export class App extends Component {
           ></ImageGallery>
         )}
         {this.state.showLoader && (
-          <Loader
-            className="spin"
-            type="Bars"
-            color="#00BFFF"
-            height={80}
-            width={80}
+          <RotatingLines
+            strokeColor="blue"
+            strokeWidth="5"
+            animationDuration="0.50"
+            width="70"
+            visible={true}
           />
         )}
         {this.state.searchWords !== '' && <Button fn={this.loadMoreFn} />}
